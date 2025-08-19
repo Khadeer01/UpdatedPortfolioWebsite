@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Details</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      body {
+        background: var(--bg);
+        color: var(--fg);
+        font-family: "Share Tech Mono", monospace;
+      }
+      .project-detail-container {
+        max-width: 800px;
+        margin: 3rem auto;
+        background: var(--card-bg);
+        border-radius: 1.5rem;
+        border: 1.5px solid var(--border);
+        box-shadow: 0 4px 32px #0002;
+        padding: 2.5rem 2rem;
+      }
+      .project-detail-back {
+        color: var(--accent);
+        text-decoration: none;
+        font-size: 1.1rem;
+        margin-bottom: 2.2rem;
+        display: inline-block;
+        border: 1.5px solid var(--accent);
+        border-radius: 0.7rem;
+        padding: 0.5rem 1.3rem;
+        background: var(--card-bg);
+        transition: background 0.2s, color 0.2s, border 0.2s;
+      }
+      .project-detail-back:hover {
+        background: var(--accent);
+        color: var(--bg);
+        border-color: var(--fg);
+      }
+      .project-detail-title {
+        font-size: 2.2rem;
+        margin-bottom: 1.2rem;
+        border-left: 4px solid var(--accent);
+        padding-left: 0.7rem;
+      }
+      .project-detail-img {
+        width: 100%;
+        max-width: 480px;
+        height: 260px;
+        object-fit: cover;
+        border-radius: 1rem;
+        border: 1.5px solid var(--border);
+        background: var(--bg);
+        margin-bottom: 1.5rem;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .project-detail-desc {
+        font-size: 1.2rem;
+        color: var(--accent);
+        margin-bottom: 1.2rem;
+      }
+      .project-detail-features {
+        margin-top: 1.5rem;
+      }
+      .project-detail-features h4 {
+        font-size: 1.1rem;
+        margin-bottom: 0.7rem;
+        color: var(--fg);
+      }
+      .project-detail-features ul {
+        margin-left: 1.2rem;
+      }
+      .project-detail-features li {
+        margin-bottom: 0.5rem;
+      }
+      @media (max-width: 600px) {
+        .project-detail-container {
+          padding: 1.2rem 0.5rem;
+        }
+        .project-detail-img {
+          height: 120px;
+        }
+        .project-detail-title {
+          font-size: 1.3rem;
+        }
+      }
+      .projects-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2.5rem;
+      }
+      @media (max-width: 900px) {
+        .projects-grid {
+          grid-template-columns: 1fr;
+          gap: 1.5rem;
+        }
+      }
+      .project-detail-section {
+        background: var(--card-bg);
+        border-radius: 1.2rem;
+        border: 1.5px solid var(--border);
+        box-shadow: 0 2px 16px #0002;
+        padding: 2rem 1.2rem 2.5rem 1.2rem;
+        margin-bottom: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .project-detail-section:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+      .project-detail-title {
+        font-size: 2rem;
+        margin-bottom: 1.2rem;
+        border-left: 4px solid var(--accent);
+        padding-left: 0.7rem;
+        width: 100%;
+      }
+      .project-detail-media {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 1.5rem;
+        width: 100%;
+      }
+      .project-detail-video {
+        width: 100%;
+        max-width: 420px;
+        height: 220px;
+        border-radius: 1rem;
+        border: 1.5px solid var(--border);
+        background: var(--bg);
+        display: block;
+      }
+      .project-detail-img {
+        width: 100%;
+        max-width: 420px;
+        height: 220px;
+        object-fit: cover;
+        border-radius: 1rem;
+        border: 1.5px solid var(--border);
+        background: var(--bg);
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .project-detail-desc {
+        font-size: 1.1rem;
+        color: var(--accent);
+        margin-bottom: 1.2rem;
+        width: 100%;
+      }
+      .project-detail-features {
+        margin-top: 1.2rem;
+        width: 100%;
+      }
+      .project-detail-features h4 {
+        font-size: 1.1rem;
+        margin-bottom: 0.7rem;
+        color: var(--fg);
+      }
+      .project-detail-features ul {
+        margin-left: 1.2rem;
+      }
+      .project-detail-features li {
+        margin-bottom: 0.5rem;
+      }
+      @media (max-width: 600px) {
+        .project-detail-section {
+          padding: 1.2rem 0.5rem 1.5rem 0.5rem;
+        }
+        .project-detail-video,
+        .project-detail-img {
+          height: 120px;
+        }
+        .project-detail-title {
+          font-size: 1.3rem;
+        }
+      }
+      .project-detail-container.wide {
+        max-width: 1400px;
+        padding: 3.5rem 2.5rem;
+      }
+      .projects-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3.5rem;
+      }
+      @media (max-width: 1100px) {
+        .project-detail-container.wide {
+          max-width: 98vw;
+          padding: 2rem 0.5rem;
+        }
+        .projects-grid {
+          gap: 2rem;
+        }
+      }
+      @media (max-width: 900px) {
+        .projects-grid {
+          grid-template-columns: 1fr;
+          gap: 1.5rem;
+        }
+      }
+      .project-detail-section {
+        background: var(--card-bg);
+        border-radius: 1.5rem;
+        border: 2px solid var(--border);
+        box-shadow: 0 4px 32px #0003;
+        padding: 2.5rem 2rem 2.5rem 2rem;
+        margin-bottom: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: box-shadow 0.2s, border 0.2s, transform 0.2s;
+      }
+      .project-detail-section:hover {
+        box-shadow: 0 8px 48px #0006;
+        border-color: var(--accent);
+        transform: translateY(-6px) scale(1.025);
+      }
+      .project-detail-section:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+      .project-detail-title {
+        font-size: 2.3rem;
+        margin-bottom: 1.5rem;
+        border-left: 5px solid var(--accent);
+        padding-left: 1.1rem;
+        width: 100%;
+        font-weight: bold;
+        letter-spacing: 0.04em;
+      }
+      .project-detail-media {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 2rem;
+        width: 100%;
+      }
+      .project-detail-video {
+        width: 100%;
+        max-width: 600px;
+        height: 340px;
+        border-radius: 1.2rem;
+        border: 2px solid var(--border);
+        background: var(--bg);
+        display: block;
+        box-shadow: 0 2px 24px #0005;
+      }
+      .project-detail-img {
+        width: 100%;
+        max-width: 600px;
+        height: 340px;
+        object-fit: cover;
+        border-radius: 1.2rem;
+        border: 2px solid var(--border);
+        background: var(--bg);
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        box-shadow: 0 2px 24px #0005;
+      }
+      .project-detail-desc {
+        font-size: 1.25rem;
+        color: var(--accent);
+        margin-bottom: 1.5rem;
+        width: 100%;
+        line-height: 1.6;
+      }
+      .project-detail-features {
+        margin-top: 1.2rem;
+        width: 100%;
+      }
+      .project-detail-features h4 {
+        font-size: 1.15rem;
+        margin-bottom: 0.7rem;
+        color: var(--fg);
+        letter-spacing: 0.03em;
+      }
+      .project-detail-features ul {
+        margin-left: 1.2rem;
+      }
+      .project-detail-features li {
+        margin-bottom: 0.5rem;
+        font-size: 1.08rem;
+      }
+      @media (max-width: 900px) {
+        .project-detail-section {
+          padding: 1.5rem 1rem 2rem 1rem;
+        }
+        .project-detail-video,
+        .project-detail-img {
+          height: 200px;
+          max-width: 100%;
+        }
+        .project-detail-title {
+          font-size: 1.8rem;
+        }
+        .project-detail-desc {
+          font-size: 1.1rem;
+        }
+      }
+      @media (max-width: 600px) {
+        .project-detail-section {
+          padding: 1.2rem 0.8rem 1.8rem 0.8rem;
+        }
+        .project-detail-video,
+        .project-detail-img {
+          height: 160px;
+        }
+        .project-detail-title {
+          font-size: 1.4rem;
+          padding-left: 0.8rem;
+        }
+        .project-detail-desc {
+          font-size: 1rem;
+          line-height: 1.5;
+        }
+        .project-detail-features h4 {
+          font-size: 1rem;
+        }
+        .project-detail-features li {
+          font-size: 0.95rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="main-header">
+      <div class="logo">&#9728; K's Hub</div>
+      <canvas id="nav-canvas"></canvas>
+      <nav>
+        <ul>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="project.html">Projects</a></li>
+          <li><a href="index.html#portfolio-trailer">Trailer</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="project-detail-container wide" id="projects-list-wrapper">
+      <a href="index.html#projects" class="project-detail-back"
+        >&#8592; Back to Portfolio</a
+      >
+      <div id="projects-list" class="projects-grid">
+        <!-- Projects will be injected here -->
+      </div>
+    </div>
+    <script>
+      // Project data with demo videos
+      const projects = [
+        {
+          id: "1",
+          title: "PowerUp Pool",
+          img: "Start Cover.png",
+          video: null,
+          desc: "A new mobile pool game packed with wild power-ups and fast-paced action. Challenge your friends, Win, and see if you have what it takes to become the a pool champion! Currently in development get ready to break the rules and the rack! This is a project that I am currently working on, brought to you by Matchup Games. As a junior developer, I'm responsible for the technical design, UI integration, bug testing, audio implementation, and overall game development. The project is still in active development, more about the project coming soon!",
+          features: [
+            "Unity development",
+            "Mobile platform",
+            "Firebase",
+            "Technical Design",
+            "Wwsie",
+          ],
+        },
+        {
+          id: "2",
+          title: "Korosu: The Last Stand",
+          img: "tls.png",
+          video: "https://www.youtube.com/embed/6Dew3JWtwhk",
+          desc: "A third-person tower defence game set in 15th-century Japan, where you defend your village against enemy clans through strategic gameplay. Inspired by Ghost of Tsushima, this was my first Unreal Engine project, fully designed and developed by me. Through this project, I gained valuable experience in game design and development, and I learned how to use Unreal Engine effectively. It was also my first time working with Blueprints, and the visual scripting process proved to be a great learning experience. I'm excited to continue building on these skills and creating more projects with Unreal.",
+          features: [
+            "UE5 development",
+            "Windows platform",
+            "Blueprints system",
+            "Tower defence mechanics",
+          ],
+        },
+        {
+          id: "3",
+          title: "Custom Unreal Tool",
+          img: "unreal.png",
+          video: "https://www.youtube.com/embed/j5hvv_9nioY",
+          desc: "A custom Unreal Engine tool that converts simple SVG files into 3D static meshes, designed for procedural generation workflows and vector-based design input. This was my first attempt at creating a plugin in Unreal, with the goal of building something useful for both developers and artists. While the tool is currently simple and supports only a limited range of shapes, the project taught me a lot about Unreal Engine and the process of tool development. It also has strong potential for expansion into a more advanced and versatile plugin in the future.",
+          features: [
+            "UE5 integration",
+            "C++ development",
+            "SVG parsing",
+            "3D mesh generation",
+          ],
+        },
+        {
+          id: "4",
+          title: "Steamboat Frenzy",
+          img: "arduino.jpg",
+          video: "https://www.youtube.com/embed/YWlRU3ONnaQ",
+          desc: 'Steamboat Frenzy is a solo-developed interactive project combining Unity with custom Arduino hardware. Originally conceived during a 3-day hackathon centered on the theme "Bizarro," this project challenged me to rapidly prototype and iterate under pressure. Throughout development, I gained hands-on experience integrating microcontrollers into a Unity environment, and strengthened my ability to solve complex technical problems—ranging from simulating realistic rotation to ensuring smooth mechanical interactions with gameplay. The experience also sharpened my ability to quickly turn abstract ideas into functional, engaging experiences.',
+          features: [
+            "Unity development",
+            "Arduino integration",
+            "C# programming",
+            "Custom hardware controller",
+          ],
+        },
+        {
+          id: "5",
+          title: "Extraterrestrial Escape",
+          img: "EECover.jpg",
+          video: "https://www.youtube.com/embed/HsgzPVyRkHs",
+          desc: "EE is a stealth-based game where you play as an alien who has crash-landed on Earth. To survive and escape, you must navigate unfamiliar environments, avoid detection by humans, and recover scattered ship parts to send a distress signal and return home. Developed as part of my coursework, this group project was completed in a small team of four, where I took on a leadership role. The experience significantly strengthened my collaboration, communication, and leadership abilities while deepening my technical skills in game development. Throughout the project, I worked on implementing enemy AI state machines, navigation meshes, health systems for both players and enemies, user interface design, level design, and player mechanics such as a flashlight system and interactive objects.",
+          features: [
+            "Unity development",
+            "Leadership",
+            "Level design",
+            "Programming",
+          ],
+        },
+      ];
+      function renderProjects() {
+        const container = document.getElementById("projects-list");
+        container.innerHTML = "";
+        projects.forEach((project) => {
+          const section = document.createElement("section");
+          section.className = "project-detail-section";
+          section.innerHTML = `
+            <div class="project-detail-title">${project.title}</div>
+            <div class="project-detail-media">
+              ${
+                project.video
+                  ? `
+                <iframe class="project-detail-video" src="${project.video}" frameborder="0" allowfullscreen></iframe>
+              `
+                  : `
+                <img src="${project.img}" alt="${project.title}" class="project-detail-img" />
+              `
+              }
+            </div>
+            <div class="project-detail-desc">${project.desc}</div>
+            <div class="project-detail-features">
+              <h4>Key Features</h4>
+              <ul>${project.features.map((f) => `<li>${f}</li>`).join("")}</ul>
+            </div>
+          `;
+          container.appendChild(section);
+        });
+      }
+      renderProjects();
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>

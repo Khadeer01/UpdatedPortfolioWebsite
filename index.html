@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Game Dev Portfolio | Technical Design</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="main-header">
+      <div class="logo">&#9728; K's Hub</div>
+      <canvas id="nav-canvas"></canvas>
+      <nav>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="project.html">Projects</a></li>
+          <li><a href="#portfolio-trailer">Trailer</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="hero">
+        <h1>Technical Design and Development for Games</h1>
+        <div class="hero-subtitle">- Khadeer Shaik</div>
+        <canvas id="hero-canvas"></canvas>
+        <canvas id="dino-canvas" tabindex="0"></canvas>
+        <div id="dino-start-text" class="dino-start-text">
+          Press Space to start
+        </div>
+      </section>
+      <div class="about-skills-row">
+        <section id="about" class="about-horizontal main-section">
+          <div class="about-img-wrap">
+            <img src="me.png" alt="Profile Picture" class="profile-pic" />
+          </div>
+          <div class="about-text">
+            <h2>About Me</h2>
+            <div class="typewriter-container">
+              <div class="typewriter-terminal">
+                <div class="terminal-header">
+                  <span class="terminal-button red"></span>
+                  <span class="terminal-button yellow"></span>
+                  <span class="terminal-button green"></span>
+                  <span class="terminal-title">developer@portfolio:~$</span>
+                </div>
+                <div class="terminal-content">
+                  <div class="typewriter-line" id="typewriterLine1">
+                    <span class="prompt">$</span>
+                    <span class="command">cat about_me.txt</span>
+                    <span class="cursor">|</span>
+                  </div>
+                  <div class="typewriter-output" id="typewriterOutput">
+                    <div class="output-line">Loading developer profile...</div>
+                    <div class="output-line">
+                      Name: Khadeer Shaik | Role: Game Developer 🎮
+                    </div>
+                    <div class="output-line">
+                      Education: Games Design & Development (Programming) 🎓
+                    </div>
+                    <div class="output-line">
+                      Experience: 2+ years creating interactive games 🚀
+                    </div>
+                    <div class="output-line">
+                      Focus: Technical design & captivating player experiences
+                      ✨
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="skills-section main-section">
+          <h2 style="display: flex; align-items: center; gap: 1rem">Skills</h2>
+          <div class="skills-gamify-title">Level Up Your Skills!</div>
+          <ul class="skills-list">
+            <li><span class="skill-icon">🕹️</span> Unity / Unreal</li>
+            <li><span class="skill-icon">#️⃣</span> C#</li>
+            <li><span class="skill-icon">💻</span> C++</li>
+            <li><span class="skill-icon">🧠</span> Technical design</li>
+            <li><span class="skill-icon">🧪</span> Testing</li>
+            <li><span class="skill-icon">🏃‍♂️</span> Agile</li>
+            <li><span class="skill-icon">🌱</span> Git</li>
+          </ul>
+          <div class="skills-xp-section">
+            <div class="xp-label">Experience Points</div>
+            <div class="xp-bar-container">
+              <div class="xp-bar">
+                <div class="xp-fill"></div>
+              </div>
+              <div class="xp-text">Level 2 - 1,700 XP</div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <section id="portfolio-trailer" class="portfolio-trailer main-section">
+        <h2>Portfolio Trailer</h2>
+        <div class="trailer-container">
+          <div class="trailer-video-container">
+            <video
+              src="PT.mp4"
+              controls
+              preload="metadata"
+              poster="PTC.png"
+              class="trailer-video"
+              style="
+                width: 100%;
+                max-width: 800px;
+                height: auto;
+                border-radius: 1rem;
+                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+                background: #000;
+              "
+            >
+              Your browser does not support the video tag.
+            </video>
+          </div>
+
+          <div class="trailer-description">
+            <p>
+              Get a glimpse into my game development journey and see some of my
+              projects in action. From technical design to gameplay mechanics,
+              discover how I bring ideas to life.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section id="projects" class="projects main-section">
+        <div class="projects-header">
+          <h2 class="section-title">Featured Projects</h2>
+          <div class="projects-subtitle">
+            Showcasing my technical expertise and creative solutions
+          </div>
+          <div class="projects-decoration">
+            <div class="decoration-line"></div>
+            <div class="decoration-icon">⚡</div>
+            <div class="decoration-line"></div>
+          </div>
+        </div>
+        <div class="project-carousel-container">
+          <a
+            href="project.html"
+            class="project-carousel-card active"
+            style="text-decoration: none; color: inherit"
+          >
+            <img
+              src="Start Cover.png"
+              alt="Procedural Level Generator"
+              style="
+                width: 100%;
+                height: 280px;
+                border-radius: 1rem 1rem 0 0;
+                object-fit: cover;
+              "
+            />
+            <div style="padding: 1.5rem">
+              <h3 style="margin-bottom: 0.5rem">PowerUp Pool</h3>
+              <div class="project-subtitle" style="margin-bottom: 0.7rem">
+                A new way to play.
+              </div>
+              <div class="project-tags" style="margin-bottom: 1.1rem">
+                <span class="project-tag">Unity</span>
+                <span class="project-tag">Mobile</span>
+                <span class="project-tag">Arcade</span>
+              </div>
+              <p style="margin-bottom: 1.2rem">
+                A new mobile pool game packed with wild power-ups and fast-paced
+                action. Challenge your friends, Win, and see if you have what it
+                takes to become the a pool champion! Currently in development
+                get ready to break the rules and the rack! Keep an eye out for
+                updates on LinkedIn!
+              </p>
+            </div>
+          </a>
+          <a
+            href="project.html"
+            class="project-carousel-card"
+            style="text-decoration: none; color: inherit"
+          >
+            <img
+              src="tls.png"
+              alt="Korosu: The Last Stand"
+              style="
+                width: 100%;
+                height: 280px;
+                border-radius: 1rem 1rem 0 0;
+                object-fit: cover;
+                object-position: center 8%;
+              "
+            />
+            <div
+              class="project-image-gallery"
+              style="
+                padding: 1rem;
+                background: var(--card-bg);
+                border-bottom: 1px solid var(--border);
+              "
+            >
+              <div
+                class="gallery-scroll"
+                style="
+                  display: flex;
+                  gap: 0.5rem;
+                  overflow-x: auto;
+                  padding-bottom: 0.5rem;
+                  scrollbar-width: none;
+                "
+              >
+                <img
+                  src="k1.png"
+                  alt="Korosu Screenshot 1"
+                  style="
+                    width: 80px;
+                    height: 60px;
+                    object-fit: cover;
+                    border-radius: 0.5rem;
+                    flex-shrink: 0;
+                    border: 1px solid var(--border);
+                  "
+                />
+                <img
+                  src="k2.png"
+                  alt="Korosu Screenshot 2"
+                  style="
+                    width: 80px;
+                    height: 60px;
+                    object-fit: cover;
+                    border-radius: 0.5rem;
+                    flex-shrink: 0;
+                    border: 1px solid var(--border);
+                  "
+                />
+                <img
+                  src="k3.png"
+                  alt="Korosu Screenshot 3"
+                  style="
+                    width: 80px;
+                    height: 60px;
+                    object-fit: cover;
+                    border-radius: 0.5rem;
+                    flex-shrink: 0;
+                    border: 1px solid var(--border);
+                  "
+                />
+              </div>
+            </div>
+            <div style="padding: 1.5rem">
+              <h3 style="margin-bottom: 0.5rem">Korosu: The Last Stand</h3>
+              <div class="project-subtitle" style="margin-bottom: 0.7rem">
+                Third person, Tower Defence.
+              </div>
+              <div class="project-tags" style="margin-bottom: 1.1rem">
+                <span class="project-tag">UE5</span>
+                <span class="project-tag">Windows</span>
+                <span class="project-tag">Blueprints</span>
+              </div>
+              <p style="margin-bottom: 1.2rem">
+                A third-person tower defence game set in 15th century Japan.
+                Defend your village against enemy clans in strategic gameplay.
+              </p>
+            </div>
+          </a>
+          <a
+            href="project.html"
+            class="project-carousel-card"
+            style="text-decoration: none; color: inherit"
+          >
+            <img
+              src="unreal.png"
+              alt="Visual Scripting System"
+              style="
+                width: 100%;
+                height: 280px;
+                border-radius: 1rem 1rem 0 0;
+                object-fit: cover;
+                object-position: center 20%;
+              "
+            />
+            <div
+              class="project-image-gallery"
+              style="
+                padding: 1rem;
+                background: var(--card-bg);
+                border-bottom: 1px solid var(--border);
+              "
+            >
+              <div
+                class="gallery-scroll"
+                style="
+                  display: flex;
+                  gap: 0.5rem;
+                  overflow-x: auto;
+                  padding-bottom: 0.5rem;
+                  scrollbar-width: none;
+                "
+              >
+                <img
+                  src="u1.png"
+                  alt="Custom Unreal Tool Screenshot 1"
+                  style="
+                    width: 80px;
+                    height: 60px;
+                    object-fit: cover;
+                    border-radius: 0.5rem;
+                    flex-shrink: 0;
+                    border: 1px solid var(--border);
+                  "
+                />
+                <img
+                  src="u2.png"
+                  alt="Custom Unreal Tool Screenshot 2"
+                  style="
+                    width: 80px;
+                    height: 60px;
+                    object-fit: cover;
+                    border-radius: 0.5rem;
+                    flex-shrink: 0;
+                    border: 1px solid var(--border);
+                  "
+                />
+                <img
+                  src="u3.png"
+                  alt="Custom Unreal Tool Screenshot 3"
+                  style="
+                    width: 80px;
+                    height: 60px;
+                    object-fit: cover;
+                    border-radius: 0.5rem;
+                    flex-shrink: 0;
+                    border: 1px solid var(--border);
+                  "
+                />
+              </div>
+            </div>
+            <div style="padding: 1.5rem">
+              <h3 style="margin-bottom: 0.5rem">Custom Unreal Tool</h3>
+              <div class="project-subtitle" style="margin-bottom: 0.7rem">
+                Generate SVG files into 3D meshes.
+              </div>
+              <div class="project-tags" style="margin-bottom: 1.1rem">
+                <span class="project-tag">UE5</span>
+                <span class="project-tag">C++</span>
+              </div>
+              <p style="margin-bottom: 1.2rem">
+                A custom tool in Unreal Engine that converts simple SVG files
+                into 3D static meshes. Perfect for procedural generation
+                workflows and vector-based design input.
+              </p>
+            </div>
+          </a>
+          <a
+            href="project.html"
+            class="project-carousel-card"
+            style="text-decoration: none; color: inherit"
+          >
+            <img
+              src="arduino.jpg"
+              alt="Physics Sandbox"
+              style="
+                width: 100%;
+                height: 280px;
+                border-radius: 1rem 1rem 0 0;
+                object-fit: cover;
+                object-position: center 8%;
+              "
+            />
+            <div
+              class="project-image-gallery"
+              style="
+                padding: 1rem;
+                background: var(--card-bg);
+                border-bottom: 1px solid var(--border);
+              "
+            >
+              <div
+                class="gallery-scroll"
+                style="
+                  display: flex;
+                  gap: 0.5rem;
+                  overflow-x: auto;
+                  padding-bottom: 0.5rem;
+                  scrollbar-width: none;
+                "
+              >
+                <img
+                  src="a1.png"
+                  alt="Steamboat Frenzy Screenshot 1"
+                  style="
+                    width: 80px;
+                    height: 60px;
+                    object-fit: cover;
+                    border-radius: 0.5rem;
+                    flex-shrink: 0;
+                    border: 1px solid var(--border);
+                  "
+                />
+                <img
+                  src="a2.png"
+                  alt="Steamboat Frenzy Screenshot 2"
+                  style="
+                    width: 80px;
+                    height: 60px;
+                    object-fit: cover;
+                    border-radius: 0.5rem;
+                    flex-shrink: 0;
+                    border: 1px solid var(--border);
+                  "
+                />
+                <img
+                  src="a3.png"
+                  alt="Steamboat Frenzy Screenshot 3"
+                  style="
+                    width: 80px;
+                    height: 60px;
+                    object-fit: cover;
+                    border-radius: 0.5rem;
+                    flex-shrink: 0;
+                    border: 1px solid var(--border);
+                  "
+                />
+              </div>
+            </div>
+            <div style="padding: 1.5rem">
+              <h3 style="margin-bottom: 0.5rem">Steamboat Frenzy</h3>
+              <div class="project-subtitle" style="margin-bottom: 0.7rem">
+                Interactive 2 Player game.
+              </div>
+              <div class="project-tags" style="margin-bottom: 1.1rem">
+                <span class="project-tag">Unity</span>
+                <span class="project-tag">Arduino</span>
+                <span class="project-tag">C#</span>
+              </div>
+              <p style="margin-bottom: 1.2rem">
+                This project uses a custom controller built with Arduino and a
+                game developed in Unity. Experience interactive gameplay
+                designed for two players with unique hardware integration.
+              </p>
+            </div>
+          </a>
+        </div>
+        <div class="carousel-dots">
+          <span class="carousel-dot active" data-index="0"></span>
+          <span class="carousel-dot" data-index="1"></span>
+          <span class="carousel-dot" data-index="2"></span>
+          <span class="carousel-dot" data-index="3"></span>
+        </div>
+      </section>
+      <section id="contact" class="contact main-section">
+        <h2>Contact</h2>
+        <div class="contact-socials">
+          <span class="contact-name">Khadeer Shaik</span>
+          <div class="social-icons">
+            <a
+              href="https://www.linkedin.com/in/khadeer-shaik-22881b258/"
+              class="social-icon linkedin"
+              target="_blank"
+              rel="noopener"
+              aria-label="LinkedIn"
+            >
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                <rect width="32" height="32" rx="8" fill="#222" />
+                <path
+                  d="M10.667 13.333h2.666v8h-2.666v-8zm1.333-4a1.333 1.333 0 110 2.667 1.333 1.333 0 010-2.667zm3.333 4h2.56v1.093h.037c.356-.675 1.226-1.387 2.523-1.387 2.7 0 3.2 1.776 3.2 4.083v4.211h-2.667v-3.733c0-.891-.016-2.037-1.241-2.037-1.242 0-1.432.97-1.432 1.97v3.8h-2.68v-8z"
+                  fill="#fff"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://github.com/Khadeer01"
+              class="social-icon github"
+              target="_blank"
+              rel="noopener"
+              aria-label="GitHub"
+            >
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                <rect width="32" height="32" rx="8" fill="#222" />
+                <path
+                  d="M16 6C10.477 6 6 10.477 6 16c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.483 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.342-3.369-1.342-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.004.07 1.532 1.032 1.532 1.032.892 1.53 2.341 1.088 2.91.832.091-.647.35-1.088.636-1.339-2.221-.253-4.555-1.111-4.555-4.945 0-1.092.39-1.987 1.029-2.686-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.025A9.564 9.564 0 0116 9.844c.85.004 1.705.115 2.504.337 1.909-1.295 2.748-1.025 2.748-1.025.546 1.378.202 2.397.1 2.65.64.699 1.028 1.594 1.028 2.686 0 3.842-2.337 4.688-4.566 4.938.359.309.678.919.678 1.852 0 1.336-.012 2.417-.012 2.747 0 .268.18.579.688.481C23.138 24.162 26 20.418 26 16c0-5.523-4.477-10-10-10z"
+                  fill="#fff"
+                />
+              </svg>
+            </a>
+            <a
+              href="mailto:Khadeershaik0308@gmail.com"
+              class="social-icon email"
+              aria-label="Email"
+            >
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                <rect width="32" height="32" rx="8" fill="#222" />
+                <path
+                  d="M8 12.667V20a1.333 1.333 0 001.333 1.333h13.334A1.333 1.333 0 0024 20v-7.333A1.333 1.333 0 0022.667 11H9.333A1.333 1.333 0 008 12.667zm2.04.667l5.293 4.235a.667.667 0 00.834 0l5.293-4.235c.04.08.04.173.04.26V20a.333.333 0 01-.333.333H9.333A.333.333 0 019 20v-6.406c0-.087 0-.18.04-.26zm10.586-1.334L16 15.265l-4.626-3.265h9.252z"
+                  fill="#fff"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>
+        &copy; <span id="current-year">2025</span> Khadeer. All rights reserved.
+      </p>
+    </footer>
+    <script src="script.js"></script>
+    <script src="dino-game.js"></script>
+
+    <!-- Image Gallery Modal -->
+    <div
+      id="imageModal"
+      style="
+        display: none !important;
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        z-index: 1000 !important;
+        pointer-events: none !important;
+        background: none !important;
+        align-items: unset !important;
+        justify-content: unset !important;
+        max-width: none !important;
+        max-height: none !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        overflow: visible !important;
+      "
+    >
+      <div
+        style="
+          position: fixed;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          text-align: center;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          background: rgba(0, 0, 0, 0.9);
+          border-radius: 1rem;
+          padding: 2rem;
+          box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+          pointer-events: auto;
+        "
+      >
+        <button
+          id="closeModal"
+          style="
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            border: none;
+            color: white;
+            font-size: 1.8rem;
+            cursor: pointer;
+            z-index: 1001;
+            width: 35px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: background-color 0.2s;
+          "
+          onmouseover="this.style.backgroundColor='rgba(0,0,0,0.9)'"
+          onmouseout="this.style.backgroundColor='rgba(0,0,0,0.7)'"
+        >
+          ×
+        </button>
+        <button
+          id="prevImage"
+          style="
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.15);
+            border: none;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            z-index: 1001;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.2s;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            line-height: 1;
+            padding: 0;
+          "
+          onmouseover="this.style.backgroundColor='rgba(255,255,255,0.25)'"
+          onmouseout="this.style.backgroundColor='rgba(255,255,255,0.15)'"
+        >
+          ‹
+        </button>
+        <button
+          id="nextImage"
+          style="
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.15);
+            border: none;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            z-index: 1001;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.2s;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            line-height: 1;
+            padding: 0;
+          "
+          onmouseover="this.style.backgroundColor='rgba(255,255,255,0.25)'"
+          onmouseout="this.style.backgroundColor='rgba(255,255,255,0.15)'"
+        >
+          ›
+        </button>
+        <div
+          id="modalImageContainer"
+          style="
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            padding: 0;
+          "
+        >
+          <img
+            id="modalImage"
+            style="
+              max-width: 100%;
+              max-height: 100%;
+              object-fit: contain;
+              border-radius: 0.8rem;
+              box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+            "
+          />
+        </div>
+        <div
+          id="imageCounter"
+          style="
+            color: white;
+            margin-top: 2rem;
+            font-size: 1.1rem;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 0.6rem 1.2rem;
+            border-radius: 25px;
+            font-weight: 500;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+          "
+        ></div>
+      </div>
+    </div>
+
+    <script>
+      // Image gallery data for each project
+      const projectGalleries = {
+        "PowerUp Pool": [
+          "Start Cover.png",
+          "Start Cover.png",
+          "Start Cover.png",
+        ],
+        "Korosu: The Last Stand": ["k1.png", "k2.png", "k3.png"],
+        "Custom Unreal Tool": ["u1.png", "u2.png", "u3.png"],
+        "Steamboat Frenzy": ["a1.png", "a2.png", "a3.png"],
+      };
+
+      let currentImageIndex = 0;
+      let currentImages = [];
+
+      // Add click handlers to gallery images
+      document.addEventListener("DOMContentLoaded", function () {
+        const galleryImages = document.querySelectorAll(".gallery-scroll img");
+        const modal = document.getElementById("imageModal");
+        const modalImage = document.getElementById("modalImage");
+        const imageCounter = document.getElementById("imageCounter");
+        const closeModal = document.getElementById("closeModal");
+        const prevImage = document.getElementById("prevImage");
+        const nextImage = document.getElementById("nextImage");
+
+        galleryImages.forEach((img) => {
+          img.style.cursor = "pointer";
+          img.addEventListener("click", function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            // Find which project this image belongs to
+            const projectCard = img.closest(".project-carousel-card");
+            const projectTitle = projectCard.querySelector("h3").textContent;
+            currentImages = projectGalleries[projectTitle];
+
+            // Find which image was clicked
+            const clickedSrc = img.src.split("/").pop();
+            currentImageIndex = currentImages.indexOf(clickedSrc);
+            if (currentImageIndex === -1) currentImageIndex = 0;
+
+            // Show first image
+            showImage(currentImageIndex);
+            modal.style.display = "flex";
+          });
+        });
+
+        function showImage(index) {
+          if (currentImages.length === 0) return;
+
+          currentImageIndex = index;
+          modalImage.src = currentImages[currentImageIndex];
+          imageCounter.textContent = `${currentImageIndex + 1} / ${
+            currentImages.length
+          }`;
+
+          // Show/hide navigation arrows
+          prevImage.style.display = currentImageIndex > 0 ? "block" : "none";
+          nextImage.style.display =
+            currentImageIndex < currentImages.length - 1 ? "block" : "none";
+        }
+
+        // Navigation functionality
+        prevImage.addEventListener("click", function () {
+          if (currentImageIndex > 0) {
+            showImage(currentImageIndex - 1);
+          }
+        });
+
+        nextImage.addEventListener("click", function () {
+          if (currentImageIndex < currentImages.length - 1) {
+            showImage(currentImageIndex + 1);
+          }
+        });
+
+        // Keyboard navigation
+        document.addEventListener("keydown", function (e) {
+          if (modal.style.display === "flex") {
+            if (e.key === "Escape") {
+              modal.style.display = "none";
+            } else if (e.key === "ArrowLeft" && currentImageIndex > 0) {
+              showImage(currentImageIndex - 1);
+            } else if (
+              e.key === "ArrowRight" &&
+              currentImageIndex < currentImages.length - 1
+            ) {
+              showImage(currentImageIndex + 1);
+            }
+          }
+        });
+
+        // Close modal functionality
+        closeModal.addEventListener("click", function () {
+          modal.style.display = "none";
+        });
+
+        // Close modal when clicking outside
+        modal.addEventListener("click", function (e) {
+          if (e.target === modal) {
+            modal.style.display = "none";
+          }
+        });
+
+        // Also close when clicking on the background overlay
+        document.addEventListener("click", function (e) {
+          if (
+            modal.style.display === "flex" &&
+            e.target.id !== "modalImage" &&
+            e.target.id !== "prevImage" &&
+            e.target.id !== "nextImage" &&
+            e.target.id !== "closeModal" &&
+            e.target.id !== "imageCounter" &&
+            !e.target.closest("#imageModal > div")
+          ) {
+            modal.style.display = "none";
+          }
+        });
+      });
+    </script>
+    <style>
+      @media (max-width: 600px) {
+        .carousel-dots {
+          display: none !important;
+        }
+
+        /* Mobile modal improvements */
+        #imageModal > div {
+          padding: 1.5rem !important;
+        }
+
+        #prevImage {
+          left: 10px !important;
+          width: 40px !important;
+          height: 40px !important;
+          font-size: 1.6rem !important;
+        }
+
+        #nextImage {
+          right: 10px !important;
+          width: 40px !important;
+          height: 40px !important;
+          font-size: 1.6rem !important;
+        }
+
+        #imageCounter {
+          font-size: 0.9rem !important;
+          padding: 0.4rem 0.8rem !important;
+        }
+      }
+
+      @media (max-width: 480px) {
+        #imageModal > div {
+          padding: 1.2rem !important;
+        }
+
+        #prevImage {
+          left: 8px !important;
+          width: 35px !important;
+          height: 35px !important;
+          font-size: 1.4rem !important;
+        }
+
+        #nextImage {
+          right: 8px !important;
+          width: 35px !important;
+          height: 35px !important;
+          font-size: 1.4rem !important;
+        }
+      }
+
+      @media (max-width: 360px) {
+        #imageModal > div {
+          padding: 1rem !important;
+        }
+
+        #prevImage {
+          left: 5px !important;
+          width: 30px !important;
+          height: 30px !important;
+          font-size: 1.2rem !important;
+        }
+
+        #nextImage {
+          right: 5px !important;
+          width: 30px !important;
+          height: 30px !important;
+          font-size: 1.2rem !important;
+        }
+      }
+    </style>
+  </body>
+</html>
